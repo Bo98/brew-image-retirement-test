@@ -5,12 +5,8 @@ on:
 jobs:
   test-bot:
     runs-on: ubuntu-latest
-    container: ghcr.io/homebrew/ubuntu16.04:master
+    container: ghcr.io/bo98/brew-ubuntu16.04:brew-deprecate
     steps:
-      - name: Set up Homebrew
-        id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@master
-
       - run: brew test-bot --only-cleanup-before
 
       - run: brew test-bot --only-setup
